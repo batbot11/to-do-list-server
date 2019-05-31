@@ -8,8 +8,11 @@ const schema = new mongoose.Schema({
 
 schema.methods.toggle = function toggle() {
    this.isDone = !this.isDone;
-   
 }
+
+schema.methods.edit = function edit(newTodo) {
+    this.todo = newTodo
+} 
 
 
 export default mongoose.model("TodoModel", schema);

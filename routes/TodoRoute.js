@@ -34,5 +34,21 @@ route.post("/toggleTodo", (req, res) => {
     
 })
 
+// @Post     api/todo/deleteTask
+// @Security Public
+// @Description Delete a todo
+
+route.delete("/deleteTask", (req, res) => {
+    TodoModel.findByIdAndDelete(req.body.todoId)
+    .then(() => res.json({Message: "Task Deleted!`"}))
+})
+
+// @Post     api/todo/updateTodo
+// @Security Public
+// @Description Update a todo
+
+route.post("/updateTodo", (req, res) => {
+   
+})
 
 export default  route;
